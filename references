@@ -1,0 +1,10 @@
+#!/bin/bash
+
+nohup open \
+	"https://www.zybuluo.com/Vany/note/93313" \
+	"https://github.com/heshulin/Library" \
+	"https://github.com/yumendy/LibraryManagement" \
+	"https://codepen.io/" \
+>/dev/null 2>&1 &
+
+osascript -e 'tell application "Terminal" to quit'
