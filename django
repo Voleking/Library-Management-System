@@ -1,9 +1,0 @@
-#!/bin/bash
-
-nohup open \
-	"http://usyiyi.cn/translate/django_182/intro/tutorial04.html" \
-	"https://docs.djangoproject.com/en/2.0/intro/tutorial04/" \
-	"https://tutorial.djangogirls.org/zh/django_forms/" \
->/dev/null 2>&1 &
-
-osascript -e 'tell application "Terminal" to quit'
