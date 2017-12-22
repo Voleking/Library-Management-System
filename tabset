@@ -1,0 +1,15 @@
+#!/bin/bash
+
+nohup open \
+	"http://127.0.0.1:8000/detail/?csrfmiddlewaretoken=cVFS6IBxHGAIqQuR5INeuf1QGZzOtCOULyyh1gD7Erug6TRbQfVBT1xrHJgyIfoL" \
+	"https://v4-alpha.getbootstrap.com/components/navbar/" \
+	"https://blackrockdigital.github.io/startbootstrap-full-width-pics/" \
+	"http://barkas.com/2017/bootstrap-classes-in-django-forms/" \
+	"https://simpleisbetterthancomplex.com/article/2017/08/19/how-to-render-django-form-manually.html" \
+	"http://v3.bootcss.com/css/#forms-control-sizes" \
+	"https://www.google.com/search?newwindow=1&ei=ueMxWsnaOozWjwPPiKGABQ&q=bootstrap+v4+%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3&oq=bootstrap+v4+%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3&gs_l=psy-ab.3..33i160k1l2.5423.14455.0.14659.44.24.3.0.0.0.364.2203.2-3j4.7.0....0...1.1j4.64.psy-ab..34.9.1889...0j35i39k1j0i67k1j0i20i263i264k1j0i22i30k1j0i20i263k1.0.c8Id23pprq0" \
+	"http://wiki.jikexueyuan.com/project/bootstrap4/components/input-group/" \
+	"https://zhidao.baidu.com/question/583480796435093365.html" \
+>/dev/null 2>&1 &
+
+osascript -e 'tell application "Terminal" to quit'

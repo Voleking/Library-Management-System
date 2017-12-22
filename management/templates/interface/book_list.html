@@ -1,0 +1,36 @@
+{% extends 'interface/base.html' %}
+
+<!-- Content section -->
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1>图书</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>出版社</th>
+                    <th>类别</th>
+                    <th>总量</th>
+                    <th>出借量</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <th scope="row">{{ book.id }}</th>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.publishing }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>{{ book.quantity_in }}</td>
+                    <td>{{ book.quantity_out }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

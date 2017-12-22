@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Library Management System">
+        <meta name="description" content="Library Management System">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="img/png" href="{% static 'img/favicon.png' %}">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min-v3.3.5.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+        <title>Login</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <form method="POST" role="form" class="form-signin">
+                {% csrf_token %}
+                <h2 class="form-signin-heading">Please Login</h2>
+                {% if state == 'not_exist_or_password_error' %}
+                <div class="alert alert-danger">
+                    <font>The account does not exist, or the password provided is incorrect.</font>
+                </div>
+                {% endif %}
+                {% if state == 'login_first' %}
+                <div class="alert alert-danger">
+                    <font>Login first.</font>
+                </div>
+                {% endif %}
+                <label for="inputUsername" class="sr-only">Username</label>
+                <input type="text" id="inputUsername" class="form-control" placeholder="Username" required name="Username" autofocus/>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="Password">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                <a class="login-link" href="">Lost your password?</a>
+            </form>
+        </div>
+    </body>
+</html>

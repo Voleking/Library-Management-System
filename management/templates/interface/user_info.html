@@ -1,0 +1,67 @@
+{% extends 'interface/base.html' %}
+
+<!-- Content section -->
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        {% if borrowed %}
+        <h2>未还书籍</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>图书</th>
+                    <th>作者</th>
+                    <th>借阅日期</th>
+                    <th>应还日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for borrow in borrowed %}
+                <tr>
+                    <td>{{ borrow.book.name }}</td>
+                    <td>{{ borrow.book.author }}</td>
+                    <td>{{ borrow.date_borrow|date:"m-d-Y" }}</td>
+                    {% if borrow.is_overdue  %}
+                    <td class="text-danger">{{ borrow.date_return|date:"m-d-Y" }}</td>
+                    {% else %}
+                    <td>{{ borrow.date_return|date:"m-d-Y" }}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="alert alert-info" role="alert">
+            没有未归还书籍！
+        </div>
+        {% endif %}
+        {% if history %}
+        <h2>借阅历史</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>图书</th>
+                    <th>作者</th>
+                    <th>借阅日期</th>
+                    <th>应还日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for borrow in history %}
+                <tr>
+                    <td>{{ borrow.book.name }}</td>
+                    <td>{{ borrow.book.author }}</td>
+                    <td>{{ borrow.date_borrow|date:"m-d-Y" }}</td>
+                    <td>{{ borrow.date_return|date:"m-d-Y" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="alert alert-warning" role="alert">
+            没有借阅历史！
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+nohup open \
+	"http://127.0.0.1:8000/detail/?csrfmiddlewaretoken=cVFS6IBxHGAIqQuR5INeuf1QGZzOtCOULyyh1gD7Erug6TRbQfVBT1xrHJgyIfoL" \
+	"https://www.google.com/search?newwindow=1&ei=yuMxWqaELsv2jwOM6ZqQBw&q=bootstrap+header+image&oq=bootstrap+header+image&gs_l=psy-ab.3...3399755.3401823.0.3402017.13.8.0.0.0.0.0.0..0.0....0...1.1j4.64.psy-ab..13.0.0....0.qLot1BT6oU8" \
+	"http://wiki.jikexueyuan.com/project/bootstrap4/components/dropdowns/" \
+	"http://wiki.jikexueyuan.com/project/bootstrap4/components/button-dropdown/#" \
+	"http://wiki.jikexueyuan.com/project/bootstrap4/getting-started/introduction/" \
+	"https://www.google.com/search?client=safari&rls=en&q=startbootstrap-full-width-pics&ie=UTF-8&oe=UTF-8" \
+	"https://github.com/BlackrockDigital/startbootstrap-full-width-pics" \
+>/dev/null 2>&1 &
+
+osascript -e 'tell application "Terminal" to quit'
